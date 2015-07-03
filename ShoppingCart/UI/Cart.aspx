@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="UI.Cart" EnableEventValidation="true" %>
 
 <asp:Content ID="Cart" ContentPlaceHolderID="PageContent" runat="server">
-    <script type="text/javascript" src="Folders/Cart.js"></script>
+    <script type="text/javascript" src="Scripts/Cart.js"></script>
     <div class="container" style="min-height: 800px">
         <div class="row">
             <div class="col-lg-12" style="height: 50px">

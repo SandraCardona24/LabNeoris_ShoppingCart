@@ -1,7 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Catalog.aspx.cs" Inherits="UI.Catalog" EnableEventValidation="true" %>
 
 <asp:Content ID="Catalog" ContentPlaceHolderID="PageContent" runat="server">
-    <script type="text/javascript" src="Folders/Catalog.js"></script>
+    <script type="text/javascript" src="Scripts/Catalog.js"></script>
     <div class="container-fluid" style="min-height: 800px">
         <div class="row">
             <div class="col-lg-12" style="height: 50px">

@@ -71,8 +71,8 @@
   <ItemGroup>
     <Content Include="Cart.aspx" />
     <Content Include="Catalog.aspx" />
-    <Content Include="Folders\Cart.js" />
-    <Content Include="Folders\Catalog.js" />
+    <Content Include="Scripts\Cart.js" />
+    <Content Include="Scripts\Catalog.js" />
     <Content Include="Global.asax" />
     <None Include="Service References\CurrencyConvertorService\configuration91.svcinfo" />
     <None Include="Service References\CurrencyConvertorService\configuration.svcinfo" />
