@@ -22,7 +22,7 @@ namespace DataAccess
 
         public int ProductID { get; set; }
 
-        [Required(ErrorMessage = "An Product Name is required")]
+        [Required(ErrorMessage = "An 'Product Name' is required")]
         [StringLength(40, ErrorMessage = "Fourty is the characters limit")]
         public string ProductName { get; set; }
 
@@ -30,11 +30,12 @@ namespace DataAccess
 
         public Nullable<int> CategoryID { get; set; }
 
-        [StringLength(20, ErrorMessage = "Twenty is the characters limit")]
+        [Required(ErrorMessage = "'Quantity Per Unit' is required")]
+        [StringLength(20, ErrorMessage = "Twenty is the characters limit")]  
         public string QuantityPerUnit { get; set; }
 
-        //[DataType(DataType.Currency, ErrorMessage="Only numbers")]
-        [RegularExpression(@"\d+(\.\d{1,2})?", ErrorMessage = "Only two decimal digits")]
+        [Required(ErrorMessage = "'Unit Price' is required")]
+        [DataType(DataType.Currency, ErrorMessage="Only decimal numbers")]
         public Nullable<decimal> UnitPrice { get; set; }
 
         [RegularExpression(@"^[1-9]\d*$", ErrorMessage = "Only Integers")]
