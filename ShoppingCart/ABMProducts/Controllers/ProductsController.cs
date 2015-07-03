@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using DataAccess;
+using System.Data.Entity.Core;
 
 namespace ABMProducts.Controllers
 {
@@ -17,8 +18,16 @@ namespace ABMProducts.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category).Include(p => p.Supplier);
-            return View(products.ToList());
+            try
+            {
+                var products = db.Products.Include(p => p.Category).Include(p => p.Supplier);
+                return View(products.ToList());
+            }
+            catch (EntityException)
+            {
+                return HttpNotFound();
+            }
+
         }
 
         // GET: Products/Details/5
