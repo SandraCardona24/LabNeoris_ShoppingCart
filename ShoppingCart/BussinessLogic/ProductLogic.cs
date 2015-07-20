@@ -63,21 +63,61 @@ namespace BussinessLogic
                 try
                 {
                     producto.SupplierID = (int)product.SupplierID;
-                    producto.CategoryID = (int)product.CategoryID;
-                    producto.UnitPrice = (decimal)product.UnitPrice;
-                    producto.UnitsInStock = (short)product.UnitsInStock;
-                    producto.UnitsOnOrder = (short)product.UnitsOnOrder;
-                    producto.ReorderLevel = (short)product.ReorderLevel;
                 }
                 catch (NullReferenceException)
                 {
                     producto.SupplierID = 0;
+                }
+
+                try
+                {
+                    producto.CategoryID = (int)product.CategoryID;
+                }
+
+                catch (NullReferenceException)
+                {
                     producto.CategoryID = 0;
+                }
+
+                try
+                {
+                    producto.UnitPrice = (decimal)product.UnitPrice;
+                }
+                catch (NullReferenceException)
+                {
+
                     producto.UnitPrice = 0;
+                }
+
+                try
+                {
+                    producto.UnitsInStock = (short)product.UnitsInStock;
+                }
+                catch (InvalidOperationException)
+                {
+
                     producto.UnitsInStock = 0;
-                    producto.UnitsOnOrder = 0;
+                }
+
+                try
+                {
+                    producto.UnitsOnOrder = (short)product.UnitsOnOrder;
+                }
+                catch (InvalidOperationException)
+                {
+
                     producto.ReorderLevel = 0;
                 }
+
+                try
+                {            
+                    producto.ReorderLevel = (short)product.ReorderLevel;
+                }
+                catch (InvalidOperationException)
+                {
+                    producto.UnitsOnOrder = 0;
+                }
+
                 return producto;
             }
             catch (NullReferenceException)
