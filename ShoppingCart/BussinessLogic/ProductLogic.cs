@@ -62,7 +62,7 @@ namespace BussinessLogic
 
                 try
                 {
-                    producto.SupplierID = (int)product.SupplierID;
+                    producto.SupplierID = Convert.ToInt32(product.SupplierID);
                 }
                 catch (NullReferenceException)
                 {
@@ -71,7 +71,7 @@ namespace BussinessLogic
 
                 try
                 {
-                    producto.CategoryID = (int)product.CategoryID;
+                    producto.CategoryID = Convert.ToInt32(product.CategoryID);
                 }
 
                 catch (NullReferenceException)
@@ -81,37 +81,34 @@ namespace BussinessLogic
 
                 try
                 {
-                    producto.UnitPrice = (decimal)product.UnitPrice;
+                    producto.UnitPrice = Convert.ToDecimal(product.UnitPrice);
                 }
                 catch (NullReferenceException)
                 {
-
                     producto.UnitPrice = 0;
                 }
 
                 try
                 {
-                    producto.UnitsInStock = (short)product.UnitsInStock;
+                    producto.UnitsInStock = Convert.ToInt16(product.UnitsInStock);
                 }
-                catch (InvalidOperationException)
+                catch (NullReferenceException)
                 {
-
                     producto.UnitsInStock = 0;
                 }
 
                 try
                 {
-                    producto.UnitsOnOrder = (short)product.UnitsOnOrder;
+                    producto.UnitsOnOrder = Convert.ToInt16(product.UnitsOnOrder);
                 }
-                catch (InvalidOperationException)
+                catch (NullReferenceException)
                 {
-
                     producto.ReorderLevel = 0;
                 }
 
                 try
                 {            
-                    producto.ReorderLevel = (short)product.ReorderLevel;
+                    producto.ReorderLevel = Convert.ToInt16(product.ReorderLevel);
                 }
                 catch (InvalidOperationException)
                 {
